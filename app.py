@@ -23,11 +23,11 @@ def hello_world():
 
 
 
-@app.route("/user")
+@app.route("/tasks")
 def user_name():
     return jsonify({'tasks': tasks})
 
-@app.route("/user/<int:id>", methods=["GET"])
+@app.route("/tasks/<int:id>", methods=["GET"])
 def user_name_id(id):
     user = list(filter(lambda t: t["id"]==id,tasks))
     if len(user)==0:
